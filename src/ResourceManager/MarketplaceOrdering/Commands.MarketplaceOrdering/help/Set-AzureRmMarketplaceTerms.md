@@ -26,13 +26,13 @@ Set-AzureRmMarketplaceTerms -Publisher <String> -Product <String> -Name <String>
  [<CommonParameters>]
 ```
 
-### InputObjectAcceptParametrSet
+### InputObjectAcceptParameterSet
 ```
 Set-AzureRmMarketplaceTerms [-Accept] [-InputObject] <PSAgreementTerms>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### InputObjectRejectParametrSet
+### InputObjectRejectParameterSet
 ```
 Set-AzureRmMarketplaceTerms [-Reject] [-InputObject] <PSAgreementTerms>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -43,14 +43,15 @@ The **Set-AzureRmMarketplaceTerms** cmdlet saves the terms object for given publ
 
 ## EXAMPLES
 
+Get the azure marketplace publisher agreement
 ### Example 1
 ```
-PS C:\> Set-AzureRmMarketplaceTerms -Publisher "microsoft-ads" -Product "windows-data-science-vm" -Name "windows2016" -Terms $agreementTerms -Accept
+PS C:\> Get-AzureRmMarketplaceTerms -Publisher "microsoft-ads" -Product "windows-data-science-vm" -Name "windows2016" | Set-AzureRmMarketplaceTerms -Accept
 ```
-
+Accept the azure marketplace publisher agreement. $agreementTerms can be populated using the 'Get-AzureRmMarketplaceTerms'.
 ### Example 2
 ```
-PS C:\> Get-AzureRmMarketplaceTerms -Publisher "microsoft-ads" -Product "windows-data-science-vm" -Name "windows2016" | Set-AzureRmMarketplaceTerms -Accept
+PS C:\> Set-AzureRmMarketplaceTerms -Publisher "microsoft-ads" -Product "windows-data-science-vm" -Name "windows2016" -Terms $agreementTerms -Accept
 ```
 
 ## PARAMETERS
